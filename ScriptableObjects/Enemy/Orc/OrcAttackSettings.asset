@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefcef9082249e246ba1664a19643283, type: 3}
+  m_Name: OrcAttackSettings
+  m_EditorClassIdentifier: 
+  basicLightAttack:
+  - {fileID: 11400000, guid: a15e7432d4c43524396d41130d4fa81c, type: 2}
+  comboAttackDatas:
+  - name: Combo 1
+    probabilityToActivate: 80
+    comboAttack:
+    - {fileID: 11400000, guid: a15e7432d4c43524396d41130d4fa81c, type: 2}
+    - {fileID: 11400000, guid: 4e5daa9137876684faf59288051242d4, type: 2}
+  - name: HeavyAttack
+    probabilityToActivate: 0
+    comboAttack:
+    - {fileID: 11400000, guid: 091c1fd70fcae7c4aae28152a0605618, type: 2}

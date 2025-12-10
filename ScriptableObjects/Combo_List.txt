@@ -1,0 +1,31 @@
+L = Light Attack
+H = Heavy Attack
+
+LightSword:
+
+	GroundAttack:
+
+		Combo_1: L L L L
+		Combo_2: L L H
+		Combo_3: L H L L H
+		Combo_4: H H L L
+		Combo_5: H H H H
+
+	AirAttack:
+
+		Combo_1: L L L L
+
+
+
+GreatSword:
+
+	GroundAttack:
+
+		Combo_1: L L L L
+		Combo_2: L L H H
+		Combo_3: H H H 
+
+	AirAttack:
+
+		Combo_1: L L L L
+

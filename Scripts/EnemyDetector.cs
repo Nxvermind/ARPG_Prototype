@@ -18,6 +18,7 @@ public class EnemyDetector : MonoBehaviour
     public float visionRange;
 
     public Transform CurrentTarget { get; private set; }
+
     private void Start()
     {
         timer = interval;
