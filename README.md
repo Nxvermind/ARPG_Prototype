@@ -119,6 +119,6 @@ Character models, animations, VFX, and sound effects used in the playable protot
 
 ## Notes
 
-This repository only includes selected gameplay scripts from the prototype. Some dependencies, assets, animations, VFX, UI prefabs, and third-party assets are not included.
+This repository only includes selected gameplay scripts from the prototype. Some dependencies, assets, animations, VFX, and third-party assets are not included.
 
 The prototype is still under active development, and the systems will continue to be improved over time.
