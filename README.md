@@ -1,4 +1,4 @@
-## ARPG Prototype
+# ARPG Prototype
 
 A third-person Action RPG combat prototype developed in Unity, focused on responsive melee combat, lock-on targeting, enemy combat coordination, hit detection, skills, and state machine driven gameplay.
 
@@ -117,6 +117,8 @@ All gameplay code in this repository was written by me.
 
 Character models, animations, VFX, and sound effects used in the playable prototype are third-party assets, including both free and paid assets.
 
+## Notes
+
 This repository only includes selected gameplay scripts from the prototype. Some dependencies, assets, animations, VFX, UI prefabs, and third-party assets are not included.
 
-The prototype is under active development, and the systems will continue to be improved over time.
+The prototype is still under active development, and the systems will continue to be improved over time.
