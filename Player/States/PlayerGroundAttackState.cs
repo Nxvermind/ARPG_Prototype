@@ -47,7 +47,7 @@ public class PlayerGroundAttackState : PlayerGroundState
         entity.HitBox.DeactivateWeaponHitBox();
         playerBlackboard.applyMovementCorrection = false;
         comboSystem.ResetCombo();
-        targetingSystem.UnlockedTarget();
+        targetingSystem.UnlockTarget();
 
         playerSkills.CanUseOtherSkills(true);
 
@@ -67,23 +67,17 @@ public class PlayerGroundAttackState : PlayerGroundState
     {
         base.Update();
 
-        if (inputHandler.ParryInputHeld)
-        {
-            return;
-        }
+        if (inputHandler.ParryInputHeld) return;
 
         if (inputHandler.LightAttackButtonPressed)
         {
             if (comboSystem.CurrentAttackNode == null) return;
             entity.InputBuffer.RegisterInput(comboSystem.CurrentAttackNode.inputBuffer, AttackType.Light);
-            //playerBlackboard.groundChargeStartTime = Time.time;
         }
         else if (inputHandler.HeavyAttackButtonPressed)
         {
             if (comboSystem.CurrentAttackNode == null) return;
             entity.InputBuffer.RegisterInput(comboSystem.CurrentAttackNode.inputBuffer, AttackType.Heavy);
-            //playerBlackboard.groundChargeStartTime = Time.time;
-
         }
 
         if (animationHandler.NormalizedTime() >= .2f)

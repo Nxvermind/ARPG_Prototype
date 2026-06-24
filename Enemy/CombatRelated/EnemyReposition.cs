@@ -88,7 +88,6 @@ public class EnemyReposition : MonoBehaviour
 
         float t = Random.value;
 
-        //uso lerp por su formula de: valor inicial + (valor final - valor inicial) * t y el sqrt porque el area de un circulo es radio al cuadrado
         float radius = Mathf.Sqrt(Mathf.Lerp(minIdealDistance * minIdealDistance, maxIdealDistance * maxIdealDistance, t));
 
         Vector3 offset = randomDir * radius;
@@ -105,7 +104,6 @@ public class EnemyReposition : MonoBehaviour
 
         float t = Random.value;
 
-        //uso lerp por su formula de: valor inicial + (valor final - valor inicial) * t y el sqrt porque el area de un circulo es radio al cuadrado
         float radius = Mathf.Sqrt(Mathf.Lerp(maxIdealDistance * maxIdealDistance, manager.rearRadius * manager.rearRadius, t));
 
         Vector3 offset = randomDir * radius;
@@ -115,8 +113,6 @@ public class EnemyReposition : MonoBehaviour
     private float CalculateScore(Vector3 point)
     {
         float score = 0f;
-
-        //score += ForwardAlignmentScore(point);
 
         score += GetPlayerMovementAlignmentScore(point);
 
@@ -137,7 +133,6 @@ public class EnemyReposition : MonoBehaviour
         for (int i = 0; i < 50; i++)
         {
             Vector3 candidate = GeneratePoint();
-            //Vector3 candidate = GenerateRandomPointInFrontArea();
 
             if (!manager.IsSlotAvailable(candidate, this))
                 continue;

@@ -50,7 +50,6 @@ public class PlayerPerfectDodgeAttackState : PlayerGroundState
                 stateMachine.ChangeState(playerStateFactory.IdleState);
                 return;
             }
-
         }
     }
 

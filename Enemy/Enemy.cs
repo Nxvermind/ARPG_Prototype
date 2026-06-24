@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour , IEnemyDamageable
     public EnemySoundsFX SoundsFX { get; private set; }
     public EnemyLocomotionBehavior EnemyLocomotionBehavior { get; private set; }
     public EnemySpecificBehavior EnemySpecificBehavior { get; private set; }
-    public EnemyHitReceiver EnemyHitReciever { get; protected set; }
+    public EnemyHitReciever EnemyHitReceiver { get; protected set; }
     public EnemyRootMotion EnemyRootMotion { get; private set; }
     public MotionSystem MotionSystem { get; private set; }
     public GotHitReaction GotHitReaction { get; private set; }
@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour , IEnemyDamageable
     public EnemyStateFactory EnemyStateFactory { get; set; }
     #endregion
 
-    public bool syncronizeAgentAndAnimation;
+    public bool synchronizeAgentAndAnimation;
 
     public virtual void Awake()
     {
@@ -169,8 +169,6 @@ public class Enemy : MonoBehaviour , IEnemyDamageable
 
     protected void SyncronizeAgentAndRootMotion()
     {
-        //if (!syncronizeAgentAndAnimation) return;
-
         if (!EnemyRootMotion.useRootMotion) return;
 
         Vector3 worldDeltaPosition = Agent.nextPosition - transform.position;

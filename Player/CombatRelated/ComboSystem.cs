@@ -40,11 +40,6 @@ public class ComboSystem : MonoBehaviour
         CurrentAttackNode = weaponComboSet.AirChargeAttack;
     }
 
-    //public void ParryAttack()
-    //{
-    //    CurrentAttackNode = weaponComboSet.ParryAttack;
-    //}
-
     public void NextAttackNode(bool isLightAttack)
     {
         AttackNode nextNode = isLightAttack ? CurrentAttackNode.nextLightAttackNode : CurrentAttackNode.nextHeavyAttackNode;

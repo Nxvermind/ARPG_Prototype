@@ -86,12 +86,6 @@ public class PlayerBaseState : State<Player>
         playerVerticalMovement.ApplyGravity(groundDetection.isGrounded);
 
         entity.MovementHandler.HandleMovement();
-
-        //if (inputHandler.LightAttackButtonPressed || inputHandler.LightAttackButtonReleased)
-        //{
-        //    playerBlackboard.groundChargeStartTime = Time.time;
-        //    playerBlackboard.airChargeStartTime = Time.time;
-        //}
     }
 
     protected void PerformFirstAttack()
@@ -117,7 +111,6 @@ public class PlayerBaseState : State<Player>
         {
             if (playerBlackboard.canAttack && inputHandler.LightAttackButtonPressed)
             {
-                //Debug.Log($"attack requested from {stateMachine.CurrentState}");
                 playerBlackboard.groundChargeStartTime = Time.time;
 
                 comboSystem.IsLightAttackNode(true);
@@ -127,7 +120,6 @@ public class PlayerBaseState : State<Player>
             }
             else if (playerBlackboard.canAttack && inputHandler.HeavyAttackButtonPressed)
             {
-                //Debug.Log($"attack requested from {stateMachine.CurrentState}");
                 playerBlackboard.groundChargeStartTime = Time.time;
 
                 comboSystem.IsLightAttackNode(false);
@@ -135,18 +127,6 @@ public class PlayerBaseState : State<Player>
                 return;
             }
         }
-
-        //else
-        //{
-        //    if (inputHandler.LightAttackButtonPressed && playerBlackboard.canAttack)
-        //    {
-        //        playerBlackboard.airChargeStartTime = Time.time;
-
-        //        comboSystem.AirAttack();
-
-        //        stateMachine.ChangeState(playerStateFactory.AirAttackState);
-        //    }
-        //}
     }
 
     private bool IsDead()
@@ -159,17 +139,4 @@ public class PlayerBaseState : State<Player>
         stateMachine.ChangeState(playerStateFactory.DeathState);
         return true;
     }
-
-    //protected void HandleChargeAttack(State<Player> newState, float chargeStartTime)
-    //{
-    //    if (inputHandler.LightAttackButtonHeld && playerBlackboard.canChargeAttack)
-    //    {
-    //        float heldTime = Time.time - chargeStartTime;
-
-    //        if (heldTime >= playerBlackboard.chargeThreshold)
-    //        {
-    //            stateMachine.ChangeState(newState);
-    //        }
-    //    }
-    //}
 }

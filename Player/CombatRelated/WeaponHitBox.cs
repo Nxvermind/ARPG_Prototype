@@ -33,7 +33,7 @@ public class WeaponHitBox : MonoBehaviour
 
                     Vector3 impactPoint = hitResults[i].ClosestPoint(center.transform.position);
                     enemy.EnemyBones.GetClosestBone(impactPoint);
-                    enemy.EnemyHitReciever.RecieveHit(ctx.CurrentAttackNode);
+                    enemy.EnemyHitReceiver.ReceiveHit(ctx.CurrentAttackNode);
                 }
             }
 
@@ -44,7 +44,7 @@ public class WeaponHitBox : MonoBehaviour
 
                 if (ctx.CurrentAttackNode == null) return;
                 
-                TimeScaler.instance.ApplyHistop(0.075f, ctx.CurrentAttackNode.hitstopDuration);
+                TimeScaler.instance.ApplyHitstop(0.075f, ctx.CurrentAttackNode.hitstopDuration);
             }
         }
     }
@@ -64,23 +64,4 @@ public class WeaponHitBox : MonoBehaviour
             hitResults[i] = null;
         }
     }
-
-    //private void OnDrawGizmosSelected()
-    //{
-    //    if (center == null) return;
-
-    //    Gizmos.color = attackActive ? Color.red : Color.green;
-
-    //    Matrix4x4 oldMatrix = Gizmos.matrix;
-
-    //    Gizmos.matrix = Matrix4x4.TRS(
-    //        center.transform.position,
-    //        center.transform.rotation,
-    //        Vector3.one
-    //    );
-
-    //    Gizmos.DrawWireCube(Vector3.zero, halfExtents * 2f);
-
-    //    Gizmos.matrix = oldMatrix;
-    //}
 }

@@ -33,7 +33,6 @@ public class PlayerParryState : PlayerGroundState
 
         parrySystem.isBlocking = true;
 
-        //parrySystem.coll.enabled = true;
         entity.StartCoroutine(parrySystem.ParryWindowRoutine());
 
         playerBlackboard.canChargeAttack = false;
@@ -67,11 +66,6 @@ public class PlayerParryState : PlayerGroundState
     {
         base.Update();
 
-        //if(inputHandler.LightAttackButtonPressed && entity.ParrySystem.canParryAttack)
-        //{
-        //    stateMachine.ChangeState(playerStateFactory.GroundAttackState);
-        //}
-
         if (animationHandler.IsPlaying("Parry_Enter") && animationHandler.NormalizedTime() >= 1f && !inParryLoop)
         {
             animationHandler.CrossFade("Parry_Loop", 0.05f);
@@ -92,19 +86,6 @@ public class PlayerParryState : PlayerGroundState
             stateMachine.ChangeState(playerStateFactory.IdleState);
             return;
         }
-
-        //if (inputHandler.ParryInputUp)
-        //{
-        //    animationHandler.Anim.ResetTrigger("parryUp");
-        //    animationHandler.CrossFade("Parry_End", .1f);
-        //    animationHandler.Anim.SetTrigger("parryUp");
-        //}
-
-        //if (animationHandler.IsPlaying("Parry_End") && animationHandler.NormalizedTime() >= .65f)
-        //{
-        //    stateMachine.ChangeState(playerStateFactory.IdleState);
-        //    return;
-        //}
 
         if (animationHandler.IsPlaying("Parry_Accept") && animationHandler.NormalizedTime() >= 1)
         {

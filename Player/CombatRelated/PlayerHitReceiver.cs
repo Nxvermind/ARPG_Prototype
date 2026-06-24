@@ -32,8 +32,6 @@ public class PlayerHitReceiver : MonoBehaviour
 
         if (dot <= .7f) return false;
 
-        Debug.Log("Defense resolved");
-
         if (player.ParrySystem.isParryActive && hitData.isParryable)
         {
             player.ParrySystem.SuccessfulParry(attacker);

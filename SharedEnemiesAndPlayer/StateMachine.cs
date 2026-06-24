@@ -21,11 +21,7 @@ public class StateMachine<T> where T : MonoBehaviour
 
     public void ChangeState(State<T> newState)
     {
-        if (isStateLocked)
-        {
-            Debug.Log($"STATE BLOCKED: {CurrentState} -> {newState}");
-            return;
-        }
+        if (isStateLocked) return;
 
         CurrentState.Exit();
 

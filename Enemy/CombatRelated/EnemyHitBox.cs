@@ -27,8 +27,6 @@ public class EnemyHitBox : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log($"attackActive is {attackActive}");
-
         if (!attackActive || alreadyHitPlayer) return;
 
         int hits = Physics.OverlapBoxNonAlloc(center.transform.position, halfExtents, buffer, center.transform.rotation, layers);
@@ -44,7 +42,7 @@ public class EnemyHitBox : MonoBehaviour
                 if (!dodgeAlreadyConsidered && h.TryGetComponent(out DodgeSystem dodge))
                 {
                     dodgeAlreadyConsidered = true;
-                    //Debug.Log($"hit detected is {h.transform.name} at {Time.time}");
+
                     dodge.TriggerPerfectDodgeWindow();
                     dodge.GetAttacker(enemy);
                 }
@@ -78,12 +76,5 @@ public class EnemyHitBox : MonoBehaviour
         attackActive = false;
         hitBoxActive = false;
         alreadyHitPlayer = false;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.matrix = Matrix4x4.TRS(center.transform.position, center.transform.rotation, Vector3.one);
-        Gizmos.DrawWireCube(Vector3.zero, halfExtents * 2);
     }
 }

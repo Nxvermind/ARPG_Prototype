@@ -12,7 +12,6 @@ public class RepositionManager : MonoBehaviour
     public float leftSideAngle;
     public float rightSideAngle;
 
-
     [Header("Slots capacity")]
     public int maxEnemiesInFrontSide;
     public int maxEnemiesInLeftSide;
@@ -97,33 +96,4 @@ public class RepositionManager : MonoBehaviour
                LeftSide.Count < maxEnemiesInLeftSide   ||
                RightSide.Count < maxEnemiesInRightSide;
     }
-
-    //private void OnDrawGizmos()
-    //{
-    //        #if UNITY_EDITOR
-    //    Handles.color = Color.yellow;
-
-    //    Handles.DrawWireDisc(transform.position, transform.up, minRadius);
-
-    //    Handles.DrawWireDisc(transform.position, transform.up, maxRadius);
-
-    //    Handles.color = Color.red;
-
-    //    Handles.DrawWireDisc(transform.position, transform.up, rearRadius);
-
-    //    Handles.DrawWireDisc(transform.position, transform.up, middleRadius);
-
-    //    //back
-
-    //    Handles.color = Color.red;
-
-    //    Handles.DrawLine(transform.position, transform.position + transform.right * maxRadius);
-
-    //    Handles.DrawLine(transform.position, transform.position - transform.right * maxRadius);
-
-    //    Handles.DrawLine(transform.position, transform.position + transform.forward * maxRadius);
-
-    //    Handles.DrawLine(transform.position, transform.position - transform.forward * maxRadius);
-    //        #endif
-    //}
 }

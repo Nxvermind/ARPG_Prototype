@@ -7,9 +7,9 @@ public class EnemyCombatSystem : MonoBehaviour
     [SerializeField] private float rangeToAllowNextAttack;
     public EnemyAttackSettings attackSettings;
     [Space]
-    public bool hasAggresiveSettings;
-    [ShowIf("hasAggresiveSettings")]
-    public EnemyAttackSettings aggresiveSettings;
+    public bool hasAggressiveSettings;
+    [ShowIf("hasAggressiveSettings")]
+    public EnemyAttackSettings aggressiveSettings;
 
     public EnemyAttackData CurrentAttackData { get; private set; }
 
@@ -129,11 +129,4 @@ public class EnemyCombatSystem : MonoBehaviour
             comboIndex++;
         }
     }
-
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.white;
-
-    //    Gizmos.DrawWireSphere(transform.position, rangeToAllowNextAttack);
-    //}
 }

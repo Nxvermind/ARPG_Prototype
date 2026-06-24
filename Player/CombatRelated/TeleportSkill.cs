@@ -45,10 +45,6 @@ public class TeleportSkill : MonoBehaviour , ISkill
             {
                 ActivateTeleportSkill();
             }
-            else
-            {
-                Debug.Log($"{hit.transform.name} was hit, it's not the skill target");
-            }
         }
 
     }

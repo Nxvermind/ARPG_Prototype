@@ -29,8 +29,6 @@ public class EnemyAttackParticipant : MonoBehaviour
 
     private Coroutine attackCooldownRoutine;
 
-    //public float TimeWithoutAttacking { get; private set; }
-
     public float TimeWithoutAttacking;
 
     public bool IsAttackingPlayer { get; set; }
@@ -96,5 +94,4 @@ public class EnemyAttackParticipant : MonoBehaviour
 
         attackCooldownRoutine = null;
     }
-
 }

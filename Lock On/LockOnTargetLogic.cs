@@ -54,7 +54,7 @@ public class LockOnTargetLogic : MonoBehaviour
 
         if (CurrentLockOnTarget && CurrentLockOnTarget.TryGetComponent(out EnemyLockOnIndicator indicator))
         {
-            indicator.ActiveLockOnIndicator();
+            indicator.ActivateLockOnIndicator();
             LockOnCamera.LookAt = CurrentLockOnTarget;
         }
     }
@@ -63,7 +63,7 @@ public class LockOnTargetLogic : MonoBehaviour
     {
         if (CurrentLockOnTarget && CurrentLockOnTarget.TryGetComponent(out EnemyLockOnIndicator indicator))
         {
-            indicator.DeactiveLockOnIndicator();
+            indicator.DeactivateLockOnIndicator();
         }
 
         CurrentLockOnTarget = null;
@@ -81,7 +81,7 @@ public class LockOnTargetLogic : MonoBehaviour
             Debug.Log("handle enemy death called");
             if (CurrentLockOnTarget && CurrentLockOnTarget.TryGetComponent(out EnemyLockOnIndicator indicator))
             {
-                indicator.DeactiveLockOnIndicator();
+                indicator.DeactivateLockOnIndicator();
             }
 
             Transform target = FindTargetAfterDeath();
@@ -146,12 +146,12 @@ public class LockOnTargetLogic : MonoBehaviour
 
             if (CurrentLockOnTarget.TryGetComponent(out EnemyLockOnIndicator lastIndicator))
             {
-                lastIndicator.DeactiveLockOnIndicator();
+                lastIndicator.DeactivateLockOnIndicator();
             }
 
             if (hitTransform.TryGetComponent(out EnemyLockOnIndicator newIndicator))
             {
-                newIndicator.ActiveLockOnIndicator();
+                newIndicator.ActivateLockOnIndicator();
             }
 
             CurrentLockOnTarget = hitTransform;

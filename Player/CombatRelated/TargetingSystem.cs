@@ -6,8 +6,7 @@ public class TargetingSystem : MonoBehaviour
     [SerializeField] private PlayerCombatContext ctx;
     [SerializeField] private LockOnTargetBlackboard lockOnTargetBlackboard; 
 
-    //public Transform CurrentTarget { get; private set; }
-    public Transform CurrentTarget;
+    public Transform CurrentTarget { get; private set; }
     public Transform currentSkillTarget;
 
     public Transform LockedTarget;
@@ -89,11 +88,6 @@ public class TargetingSystem : MonoBehaviour
                 {
                     UnlockedTarget();
                 }
-
-                //if (CurrentTarget != null && IsTargetInRange(4) && CurrentTarget != LockedTarget)
-                //{
-                //    UnlockedTarget();
-                //}
             }
         }
     }
@@ -105,7 +99,7 @@ public class TargetingSystem : MonoBehaviour
         IsCurrentTargetLocked = true;
     }
 
-    public void UnlockedTarget()
+    public void UnlockTarget()
     {
         IsCurrentTargetLocked = false;
         LockedTarget = null;
@@ -126,24 +120,6 @@ public class TargetingSystem : MonoBehaviour
 
         return sqrDistance <= sqrDistanceToPlayer;
     }
-
-    //public Transform SwitchLockOnTarget(float mouseDir)
-    //{
-    //    Transform bestTarget = null;
-    //    float bestScore = float.MinValue;
-
-    //    Vector3 origin = forwardReference.position;
-
-    //    foreach(Transform enemy in enemyDetector.EnemiesDetected)
-    //    {
-    //        if (enemy == currentTarget) continue;
-
-    //        Vector3 dirToAnotherEnemies = (enemy.position - currentTarget.position).normalized;
-
-    //    }
-
-    //    return bestTarget;
-    //}
 
     public Transform FindClosestEnemy(Transform origin)
     {
@@ -166,6 +142,7 @@ public class TargetingSystem : MonoBehaviour
 
         return closestEnemy;
     }
+
     public Transform FindClosestEnemyForLockOn(Vector3 origin, Transform lockOnTarget)
     {
         Transform closestEnemy = null;
@@ -189,6 +166,7 @@ public class TargetingSystem : MonoBehaviour
 
         return closestEnemy;
     }
+
     public Transform FindBestTargetInVisionAngle(float visionAngle)
     {
         Transform bestTarget = null;
@@ -222,6 +200,7 @@ public class TargetingSystem : MonoBehaviour
 
         return bestTarget;
     }
+
     public Transform FindBestTargetForTeleportSkill(float visionAngle)
     {
         Transform bestTarget = null;
@@ -288,30 +267,4 @@ public class TargetingSystem : MonoBehaviour
     {
         UnlockedTarget();
     }
-
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.green;
-
-    //    //Gizmos.DrawWireSphere(transform.position, 4);
-
-    //    Vector3 origin = ctx.CameraForward.position;
-    //    Vector3 forward = ctx.CameraForward.forward;
-
-    //    Vector3 rightAngle = Quaternion.Euler(0, visionAngle, 0) * forward;
-
-    //    Gizmos.DrawLine(origin, origin + rightAngle * visionRange);
-
-    //    Vector3 leftAngle = Quaternion.Euler(0, -visionAngle, 0) * forward;
-
-    //    Gizmos.DrawLine(origin, origin + leftAngle * visionRange);
-
-    //    Vector3 skillRightAngle = Quaternion.Euler(0, visionSkillAngle, 0) * forward;
-
-    //    Gizmos.DrawLine(origin, origin + skillRightAngle * visionRange);
-
-    //    Vector3 skillLeftAngle = Quaternion.Euler(0, -visionSkillAngle, 0) * forward;
-
-    //    Gizmos.DrawLine(origin, origin + skillLeftAngle * visionRange);
-    //}
 }

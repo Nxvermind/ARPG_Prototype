@@ -81,7 +81,6 @@ public class AttackCoordinatorSystem : MonoBehaviour
             {
                 CanUpdateEngageTime = false;
 
-                Debug.Log("engage time was zero");
                 TryAddNewMeleeAttacker();
 
                 engageTime = OriginalEngageTime;
@@ -363,8 +362,6 @@ public class AttackCoordinatorSystem : MonoBehaviour
             delayedMeleeAssignment = null;
             yield break;
         }
-
-        //Debug.Log("rnd time has passed, a new attacker has been assigned");
 
         pendingAttackers.Remove(enemy);
         meleeActiveAttackers.Add(enemy);

@@ -38,7 +38,7 @@ public class TimeScaler : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void ApplyHistop(float scale, float duration)
+    public void ApplyHitstop(float scale, float duration)
     {
         scale = Mathf.Clamp01(scale);
 

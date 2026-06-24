@@ -48,8 +48,6 @@ public class PlayerGroundState : PlayerBaseState
             playerBlackboard.dodgeAvailable = true;
         }
 
-        //HandleChargeAttack(playerStateFactory.GroundChargeAttackState, playerBlackboard.groundChargeStartTime);
-
         if (entity.executionBlackboard.IsExecutingEnemy && !alreadyExecutingEnemy)
         {
             stateMachine.ChangeState(playerStateFactory.ExecutionState);
