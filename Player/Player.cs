@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IPlayerMovementProvider
 {
-    #region Showed In Inspector
+    #region Inspector Fields
 
     public Transform cameraTransform;
 

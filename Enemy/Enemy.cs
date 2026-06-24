@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour , IEnemyDamageable
 {
-    #region Showed in Inspector
+    #region Inspector Fields
 
     public Transform target;
 
